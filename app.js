@@ -123,3 +123,14 @@ addForm.addEventListener('submit', (e) => {
     list.appendChild(li);
 })
 
+// **************************************************************************************************************** //
+
+// CHECKBOX EVENTS (Change events)
+
+// hide books
+
+const checkbox = document.querySelector('#hide');
+checkbox.addEventListener('change', (e) =>{
+    list.style.display = checkbox.checked ? 'none' : 'initial';
+})
+
