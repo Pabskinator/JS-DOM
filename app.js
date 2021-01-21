@@ -21,3 +21,13 @@ console.log(booklistSecondChild);
 // Select multiple elements
 let books = document.querySelectorAll('#book-list li .name');
 console.log(books);
+
+// **************************************************************************************************************** //
+
+books.forEach((book) => book.textContent += ' (book title)'); // += here is append
+
+const bookList = document.querySelector('#book-list');
+
+// adding / appending html content
+
+bookList.innerHTML += '<p>Books and more books....</p>'
