@@ -134,3 +134,24 @@ checkbox.addEventListener('change', (e) =>{
     list.style.display = checkbox.checked ? 'none' : 'initial';
 })
 
+// **************************************************************************************************************** //
+
+// CUSTOM SEARCH FILTER
+
+// filter books
+const searchBar = document.forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', (e) => {
+    const term = e.target.value.toLowerCase();
+    const books = list.querySelectorAll('li');
+
+    books.forEach((book) => {
+        const title = book.firstElementChild.textContent;
+
+        if(title.toLowerCase().indexOf(term) !== -1){
+            book.style.display = 'block';
+        }else{
+            book.style.display = 'none';
+        }
+    })
+})
+
