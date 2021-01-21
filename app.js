@@ -103,5 +103,23 @@ const addForm = document.forms['add-book'];
 addForm.addEventListener('submit', (e) => {
     e.preventDefault()
     const value = addForm.querySelector('input[type="text"]').value;
-    console.log(value);
+
+    // create element
+    const li = document.createElement('li');
+    const bookNameSpan = document.createElement('span');
+    const bookDeleteSpan = document.createElement('span');
+
+    // add content
+    bookNameSpan.textContent = value;
+    bookDeleteSpan.textContent = 'delete';
+
+    // add classes
+    bookNameSpan.classList.add('name');
+    bookDeleteSpan.classList.add('delete');
+
+    // append to DOM
+    li.appendChild(bookNameSpan);
+    li.appendChild(bookDeleteSpan);
+    list.appendChild(li);
 })
+
