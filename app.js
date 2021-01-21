@@ -69,3 +69,39 @@ console.log('book-lit previous element sibling is:', bookList.previousElementSib
 const subtitle = bookList.previousElementSibling.querySelector('p');
 subtitle.style.color = 'red';
 subtitle.innerHTML += '</br> Read and grow.';
+
+// **************************************************************************************************************** //
+
+// EVENTS
+
+// delete book
+// let buttons = document.querySelectorAll('#book-list .delete');
+//
+// buttons.forEach((button) => {
+//     button.addEventListener('click', (e) => {
+//         const li = e.target.parentElement.remove();
+//     })
+// })
+
+/* The drawback of the process above is when you add a new book,
+    the event will not work because you already added it on the first 4 books,
+    we can solve this by utilizing EVENT BUBBLING
+ */
+
+const list = document.querySelector('#book-list ul');
+
+list.addEventListener('click', (e) => {
+    if(e.target.className === 'delete'){
+        const li = e.target.parentElement;
+        list.removeChild(li)
+    }
+})
+
+// add book
+const addForm = document.forms['add-book'];
+
+addForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const value = addForm.querySelector('input[type="text"]').value;
+    console.log(value);
+})
