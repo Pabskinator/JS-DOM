@@ -1,4 +1,4 @@
-// converting to array
+// CONVERT TO ARRAY
 
 let titles = document.getElementsByClassName('title');
 
@@ -9,7 +9,7 @@ Array.from(titles).forEach((item) => console.log(item));
 
 // **************************************************************************************************************** //
 
-// Query Selector
+// QUERY SELECTORS
 
 const wrap = document.querySelector('#wrapper');
 console.log(wrap);
@@ -23,6 +23,8 @@ let books = document.querySelectorAll('#book-list li .name');
 console.log(books);
 
 // **************************************************************************************************************** //
+
+// ADDING/CHANGING DOM ELEMENTS
 
 books.forEach((book) => book.textContent += ' (book title)'); // += here is append
 
@@ -42,3 +44,17 @@ console.log('#page-banner has child nodes:', banner.hasChildNodes());
 
 // cloning a node
 const clonedBanner = banner.cloneNode(true);
+
+// **************************************************************************************************************** //
+
+// TRAVERSING THE DOM
+
+// const bookList = document.querySelector('#book-list');
+
+// grab a reference to the parent node / traversing upwards
+console.log('The parent node is:', bookList.parentNode);
+console.log('The parent node is:', bookList.parentElement.parentElement);
+
+// traverse downwards - children
+console.log(bookList.childNodes);
+console.log(bookList.children);
