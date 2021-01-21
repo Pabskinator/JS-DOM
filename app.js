@@ -58,3 +58,14 @@ console.log('The parent node is:', bookList.parentElement.parentElement);
 // traverse downwards - children
 console.log(bookList.childNodes);
 console.log(bookList.children);
+
+// traverse DOM with sibling elements
+console.log('book-lit next sibling is:', bookList.nextSibling);
+console.log('book-lit next element sibling is:', bookList.nextElementSibling);
+
+console.log('book-lit previous sibling is:', bookList.previousSibling);
+console.log('book-lit previous element sibling is:', bookList.previousElementSibling);
+
+const subtitle = bookList.previousElementSibling.querySelector('p');
+subtitle.style.color = 'red';
+subtitle.innerHTML += '</br> Read and grow.';
