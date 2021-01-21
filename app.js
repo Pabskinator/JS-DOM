@@ -29,5 +29,16 @@ books.forEach((book) => book.textContent += ' (book title)'); // += here is appe
 const bookList = document.querySelector('#book-list');
 
 // adding / appending html content
-
 bookList.innerHTML += '<p>Books and more books....</p>'
+
+// **************************************************************************************************************** //
+
+// NODES
+
+const banner = document.querySelector('#page-banner');
+console.log('#page-banner node type is:', banner.nodeType);
+console.log('#page-banner node name is:', banner.nodeName);
+console.log('#page-banner has child nodes:', banner.hasChildNodes());
+
+// cloning a node
+const clonedBanner = banner.cloneNode(true);
